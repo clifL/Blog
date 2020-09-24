@@ -7,6 +7,9 @@
   <link rel="stylesheet" href="navbar.css">
   <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Open+Sans&display=swap" rel="stylesheet">
   <title>Navbar</title>
+
+ 
+
 </head>
 <header>
     <h1><a href="https://clifl.github.io/Blog/">C l i f <span>. L</span></h1>
@@ -32,31 +35,33 @@
 </header>
 
 <body>
-
-  <div class="bg" id='myimage'></div>
+  <div id="bg" class="test"></div>
   <div class="fg">
     <h3 style="text-align:center;background-color:#fff9f8;color: #000000">Home Page...</h3>
   </div>
-	<script type='text/javascript'>
-	var imageID=0;
-	function changeimage(every_seconds){
-		//change the image
-		if(!imageID){
-			document.getElementById("myimage").src="starsky.jpg";
-			imageID++;
-		}
-		else{if(imageID==1){
-			document.getElementById("myimage").src="travel.jpg";
-			imageID++;
-		}else{if(imageID==2){
-			document.getElementById("myimage").src="night.jpg";
-			imageID=0;
-		}}}
-		//call same function again for x of seconds
-		setTimeout("changeimage("+every_seconds+")",((every_seconds)*1000));
-	}
-  changeimage(5);
-	</script>
+
+  <script type='text/javascript'>
+    var imageID=0;
+    function changeImage(every_seconds){
+      //change the image
+      let bg = document.getElementById('bg');
+      if(!imageID){
+        bg.style.backgroundImage = "url(starsky.jpg)";
+        
+        imageID++;
+      }
+      else{if(imageID==1){
+        bg.style.backgroundImage = "url(travel.jpg)";
+        imageID++;
+      }else{if(imageID==2){
+        bg.style.backgroundImage = "url(night.jpg)";
+        imageID=0;
+      }}}
+      //call same function again for x of seconds
+      setTimeout("changeImage("+every_seconds+")",((every_seconds)*1000));
+    }
+    changeImage(15);
+    </script>
 </body>
 
 </html>
