@@ -33,12 +33,30 @@
 
 <body>
 
-  <div class="bg"></div>
+  <div class="bg" id='myimage'></div>
   <div class="fg">
     <h3 style="text-align:center;background-color:#fff9f8;color: #000000">Home Page...</h3>
   </div>
-
-
+	<script type='text/javascript'>
+	var imageID=0;
+	function changeimage(every_seconds){
+		//change the image
+		if(!imageID){
+			document.getElementById("myimage").src="starsky.jpg";
+			imageID++;
+		}
+		else{if(imageID==1){
+			document.getElementById("myimage").src="travel.jpg";
+			imageID++;
+		}else{if(imageID==2){
+			document.getElementById("myimage").src="night.jpg";
+			imageID=0;
+		}}}
+		//call same function again for x of seconds
+		setTimeout("changeimage("+every_seconds+")",((every_seconds)*1000));
+	}
+  changeimage(5);
+	</script>
 </body>
 
 </html>
